@@ -1,7 +1,7 @@
 " Vim color file
 " Maintainer:   Michael Brailsford <brailsmt@yahoo.com>
-" Date:			$Date: 2002/04/01 05:11:19 $ 
-" Version: 		$Revision: 1.2 $
+" Date:			$Date: 2002/04/07 04:05:18 $ 
+" Version: 		$Revision: 1.3 $
 
 " cool help screens
 " :he group-name
@@ -18,31 +18,42 @@ let g:colors_name="midnight"
 
 hi Normal guifg=lightsteelblue guibg=#00006f ctermfg=14
 
-"Make semicolons at the end of lines stick out
-"syn match semicolon #;$#
-"hi semicolon guifg=red gui=bold ctermfg=1
+"Toggle semicolon matching at the end of lines
+nmap <silent> <leader>sc :call ToggleSemicolonHighlighting()<cr>
+"{{{
+function! ToggleSemicolonHighlighting()
+	if exists("b:semicolon")
+		unlet b:semicolon
+		hi semicolon guifg=NONE gui=NONE ctermfg=NONE
+	else
+		syn match semicolon #;$#
+		hi semicolon guifg=red gui=bold ctermfg=1
+		let b:semicolon = 1
+	endif
+endfunction
+"}}}
 
 hi Cursor guifg=bg guibg=fg ctermfg=0 ctermbg=11
 "hi CursorIM	
-"hi Directory	
+hi Directory gui=bold
 hi DiffAdd guifg=yellow guibg=darkgreen ctermbg=0
 "hi DiffChange	
 "hi DiffDelete	
 "hi DiffText	
-"hi ErrorMsg	
+hi ErrorMsg	guibg=red ctermfg=1
 "hi VertSplit	
 hi Folded guibg=#000047 ctermbg=4 guifg=yellow ctermfg=11 gui=bold
-hi FoldColumn guibg=lightblue ctermbg=14 guifg=darkblue ctermfg=11 gui=bold
+hi FoldColumn guibg=steelblue3 ctermbg=14 guifg=darkblue ctermfg=11 gui=bold
 "hi IncSearch	
-"hi LineNr		
-"hi ModeMsg		
+hi LineNr guifg=yellow ctermfg=11
+hi ModeMsg guifg=yellow gui=bold
 "hi MoreMsg		
 "hi NonText		
 "hi Question	
-"hi Search		
+hi Search guibg=yellow guifg=bg
 "hi SpecialKey	
-"hi StatusLine	
-"hi StatusLineNC	
+hi StatusLine guifg=steelblue1
+hi StatusLineNC guifg=steelblue3
 "hi Title		
 hi Visual guifg=fg guibg=bg
 "hi VisualNOS	
