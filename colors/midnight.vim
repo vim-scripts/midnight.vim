@@ -1,6 +1,7 @@
 " Vim color file
 " Maintainer:   Michael Brailsford <brailsmt@yahoo.com>
-" Last Change:  $date$
+" Date:			$Date: 2002/04/01 05:11:19 $ 
+" Version: 		$Revision: 1.2 $
 
 " cool help screens
 " :he group-name
@@ -18,8 +19,8 @@ let g:colors_name="midnight"
 hi Normal guifg=lightsteelblue guibg=#00006f ctermfg=14
 
 "Make semicolons at the end of lines stick out
-syn match semicolon #;$#
-hi semicolon guifg=red gui=bold ctermfg=1
+"syn match semicolon #;$#
+"hi semicolon guifg=red gui=bold ctermfg=1
 
 hi Cursor guifg=bg guibg=fg ctermfg=0 ctermbg=11
 "hi CursorIM	
