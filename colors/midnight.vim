@@ -1,7 +1,7 @@
 " Vim color file
 " Maintainer:   Michael Brailsford <brailsmt@yahoo.com>
-" Date:			$Date: 2002/04/07 04:05:18 $ 
-" Version: 		$Revision: 1.3 $
+" Date:			$Date: 2002/04/11 03:29:51 $ 
+" Version: 		$Revision: 1.4 $
 
 " cool help screens
 " :he group-name
@@ -19,7 +19,7 @@ let g:colors_name="midnight"
 hi Normal guifg=lightsteelblue guibg=#00006f ctermfg=14
 
 "Toggle semicolon matching at the end of lines
-nmap <silent> <leader>sc :call ToggleSemicolonHighlighting()<cr>
+nmap <silent> <leader>; :call ToggleSemicolonHighlighting()<cr>
 "{{{
 function! ToggleSemicolonHighlighting()
 	if exists("b:semicolon")
